@@ -10,7 +10,7 @@ RUN apt-get autoclean
 RUN apt-get autoremove
 
 RUN wget -o ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-RUN unzip -o ngrok.zip -d /usr/share
+RUN unzip ngrok.zip
 RUN rm /ngrok.zip
 
 COPY novnc.zip /novnc.zip
