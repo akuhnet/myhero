@@ -15,8 +15,8 @@ RUN apt-get install -y \
     supervisor \ 
     xfce4 \
     gnome-shell \
-    lxde  && \
-    lxde-session \ 
+    ubuntu-gnome-desktop \
+    gnome-session \ 
     gdm3 \ 
     tasksel \
     ssh  \
