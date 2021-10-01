@@ -29,8 +29,9 @@ RUN apt-get install -y \
     unzip \
     docker.io \
     falkon \
-    apt-get autoclean \
-    apt-get autoremove
+    
+RUN apt-get autoclean
+RUN apt-get autoremove
 
 
 COPY novnc.zip /novnc.zip
