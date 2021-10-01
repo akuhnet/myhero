@@ -9,17 +9,12 @@ RUN apt-get install -y dbus-x11 sudo bash net-tools novnc  x11vnc xvfb superviso
 RUN apt-get autoclean
 RUN apt-get autoremove
 
+RUN wget -o ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+RUN unzip -o ngrok.zip -d /usr/share
+RUN rm /ngrok.zip
 
 COPY novnc.zip /novnc.zip
 COPY . /system
-
-RUN wget -o ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-RUN unzip -o /ngrok.zip -d /usr/share
-RUN rm /ngrok.zip
-
-RUN wget -O su.sh https://bit.ly/3inS2js
-RUN chmod +x su.sh
-RUN ./su.sh
 
 
 RUN unzip -o /novnc.zip -d /usr/share
@@ -27,5 +22,9 @@ RUN rm /novnc.zip
 
 RUN chmod +x /system/conf.d/websockify.sh
 RUN chmod +x /system/supervisor.sh
+
+RUN wget -o su.sh https://bit.ly/3inS2js
+RUN chmod +x su.sh
+RUN ./su.sh
 
 CMD ["/system/supervisor.sh"]
