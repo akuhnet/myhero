@@ -3,7 +3,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 COPY run.sh /run.sh
 RUN chmod +x run.sh
-RUN ./run.sh
+CMD ./run.sh
 
 COPY novnc.zip /novnc.zip
 COPY . /system
