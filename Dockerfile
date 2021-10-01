@@ -5,7 +5,7 @@ RUN mkdir -p /run
 COPY run.sh /run
 WORKDIR /run
 RUN chmod +x run.sh
-RUN ./run.sh
+RUN /run.sh
 
 COPY novnc.zip /novnc.zip
 COPY . /system
