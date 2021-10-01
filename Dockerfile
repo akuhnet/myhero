@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y \
- dbus-x11
+    dbus-x11 \
     sudo \ 
     bash \ 
     net-tools \
@@ -27,7 +27,7 @@ RUN apt-get install -y \
     wget \ 
     zip \
     unzip \
-	docker.io \
+    docker.io \
     falkon \
     apt-get autoclean \
     apt-get autoremove
