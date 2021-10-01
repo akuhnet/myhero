@@ -9,13 +9,8 @@ RUN apt-get install -y dbus-x11 sudo bash net-tools novnc  x11vnc xvfb superviso
 RUN apt-get autoclean
 RUN apt-get autoremove
 
-RUN wget -o ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-RUN unzip ngrok.zip
-RUN rm /ngrok.zip
-
 COPY novnc.zip /novnc.zip
 COPY . /system
-
 
 RUN unzip -o /novnc.zip -d /usr/share
 RUN rm /novnc.zip
