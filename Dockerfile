@@ -4,8 +4,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p /run
 COPY run.sh /run
 WORKDIR /run
-RUN chmod +x run.sh
-RUN /run.sh
+RUN ls
+RUN /run/run.sh
+
+
 
 COPY novnc.zip /novnc.zip
 COPY . /system
