@@ -3,7 +3,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 
 RUN apt-get update && \
-	apt-get upgrade -y  && \
+    apt-get upgrade -Y  && \
     apt install dbus-x11 -y  && \
     apt install sudo -y  && \ 
     apt install bash -y  && \ 
@@ -26,7 +26,7 @@ RUN apt-get update && \
     apt install wget -y  && \ 
     apt install zip -y  && \
     apt install unzip -y  && \
-	apt install docker.io -y && \
+    apt install docker.io -y && \
     apt install falkon -y  && \
     apt-get autoclean -y  && \
     apt-get autoremove
