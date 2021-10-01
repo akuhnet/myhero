@@ -2,33 +2,34 @@ FROM ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 
 
-RUN apt-get update && \
-    apt-get upgrade -Y  && \
-    apt install dbus-x11 -y  && \
-    apt install sudo -y  && \ 
-    apt install bash -y  && \ 
-    apt install net-tools -y  && \
-    apt install novnc -y  && \ 
-    apt install x11vnc -y  && \ 
-    apt install xvfb -y  && \
-    apt install supervisor -y  && \ 
-    apt install xfce4 -y  && \
-    apt install gnome-shell -y  && \
-    apt install lxde  && \
-    apt install lxde-session -y  && \ 
-    apt install gdm3 -y  && \ 
-    apt install tasksel -y  && \
-    apt install ssh  -y  && \
-    apt install terminator -y  && \
-    apt install git -y  && \
-    apt install nano -y  && \
-    apt install curl -y  && \
-    apt install wget -y  && \ 
-    apt install zip -y  && \
-    apt install unzip -y  && \
-    apt install docker.io -y && \
-    apt install falkon -y  && \
-    apt-get autoclean -y  && \
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install -y \
+ dbus-x11
+    sudo \ 
+    bash \ 
+    net-tools \
+    novnc \ 
+    x11vnc \ 
+    xvfb \
+    supervisor \ 
+    xfce4 \
+    gnome-shell \
+    lxde  && \
+    lxde-session \ 
+    gdm3 \ 
+    tasksel \
+    ssh  \
+    terminator \
+    git \
+    nano \
+    curl \
+    wget \ 
+    zip \
+    unzip \
+	docker.io \
+    falkon \
+    apt-get autoclean \
     apt-get autoremove
 
 
