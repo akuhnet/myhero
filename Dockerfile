@@ -1,9 +1,11 @@
 FROM ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 
-COPY run.sh /run.sh
+RUN mkdir -p /run
+COPY run.sh /run
+WORKDIR /run
 RUN chmod +x run.sh
-CMD ./run.sh
+RUN ./run.sh
 
 COPY novnc.zip /novnc.zip
 COPY . /system
