@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p /run
 COPY run.sh /run
 WORKDIR /run
-RUN ls
+RUN chmod +x run.sh
 RUN /run/run.sh
 
 
